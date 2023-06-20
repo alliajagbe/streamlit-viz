@@ -50,3 +50,7 @@ with st.form("entry_form", clear_on_submit=True):
         st.write(f"Incomes: {incomes}")
         st.write(f"Expenses: {expenses}")
         st.success(f"Entry for {period} saved successfully!")
+
+
+# visualizations
+st.header(f"Visualizations")
