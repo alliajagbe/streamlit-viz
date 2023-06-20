@@ -7,7 +7,7 @@ from datetime import datetime
 # page configurations
 incomes = ["salary", "dividends", "lottery"]
 expenses = ["rent", "food", "bills", "saving", "fun", "clothes"]
-currency = "USD"
+currency = "Naira"
 page_title = "Budget App"
 page_icon = "💰"
 layout = "centered"
@@ -19,3 +19,4 @@ years = [datetime.today().year, datetime.today().year + 1]
 months = [calendar.month_name[i] for i in range(1, 13)]
 
 st.header(f"Data Entry in {currency}")
+
