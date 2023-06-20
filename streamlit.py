@@ -20,3 +20,7 @@ months = [calendar.month_name[i] for i in range(1, 13)]
 
 st.header(f"Data Entry in {currency}")
 
+with st.form("entry_form", clear_on_submit=True):
+    month_col, year_col = st.columns(2)
+    month_col.selectbox("Select Month", months, key="month")
+    year_col.selectbox("Select Year", years, key="year")
