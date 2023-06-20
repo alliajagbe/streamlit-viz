@@ -70,3 +70,9 @@ with st.form("saved_periods"):
         inc_column.metric("Total Income", f"{total_income} {currency}")
         exp_column.metric("Total Expense", f"{total_expense} {currency}")
         rem_column.metric("Remainder", f"{remainder} {currency}")
+
+        # income pie chart
+        income_fig = go.Figure(data=[go.Pie(labels=list(incomes.keys()), values=list(incomes.values()))])
+        income_fig.update_layout(title_text=f"Incomes for {period}")
+        st.plotly_chart(income_fig, use_container_width=True)
+
