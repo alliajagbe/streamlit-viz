@@ -76,3 +76,8 @@ with st.form("saved_periods"):
         income_fig.update_layout(title_text=f"Incomes for {period}")
         st.plotly_chart(income_fig, use_container_width=True)
 
+        # expense pie chart
+        expense_fig = go.Figure(data=[go.Pie(labels=list(expenses.keys()), values=list(expenses.values()))])
+        expense_fig.update_layout(title_text=f"Expenses for {period}")
+        st.plotly_chart(expense_fig, use_container_width=True)
+
