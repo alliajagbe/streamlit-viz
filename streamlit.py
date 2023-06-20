@@ -38,3 +38,6 @@ with st.form("entry_form", clear_on_submit=True):
 
     with st.expander("Comment"):
         comment = st.text_area("", placeholder="Enter comment here...", max_chars=100)
+
+    "---"
+    submitted = st.form_submit_button("Save Entry")
