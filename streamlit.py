@@ -62,4 +62,11 @@ with st.form("saved_periods"):
         comment = "This is a comment"
         incomes = {"salary": 1000, "dividends": 2000, "lottery": 3000}
         expenses = {"rent": 1000, "food": 2000, "bills": 3000, "saving": 4000, "fun": 5000, "clothes": 6000}
-        
+
+        total_income = sum(incomes.values())
+        total_expense = sum(expenses.values())
+        remainder = total_income - total_expense
+        inc_column, exp_column, rem_column = st.columns(3)
+        inc_column.metric("Total Income", f"{total_income} {currency}")
+        exp_column.metric("Total Expense", f"{total_expense} {currency}")
+        rem_column.metric("Remainder", f"{remainder} {currency}")
