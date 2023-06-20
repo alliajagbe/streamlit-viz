@@ -28,3 +28,7 @@ with st.form("entry_form", clear_on_submit=True):
     with st.expander("Incomes"):
         for income in incomes: 
             st.number_input(f"{income}:", min_value=0, format="%i", step=10, key=income)
+
+    with st.expander("Expenses"):
+        for expense in expenses:
+            st.number_input(f"{expense}:", min_value=0, format="%i", step=10, key=expense)
