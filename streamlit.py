@@ -54,3 +54,6 @@ with st.form("entry_form", clear_on_submit=True):
 
 # visualizations
 st.header(f"Visualizations")
+with st.form("saved_periods"):
+    period = st.selectbox("Select Period:", ["2023_January"])
+    submitted = st.form_submit_button("Visualize")
