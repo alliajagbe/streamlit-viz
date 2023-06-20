@@ -57,3 +57,9 @@ st.header(f"Visualizations")
 with st.form("saved_periods"):
     period = st.selectbox("Select Period:", ["2023_January"])
     submitted = st.form_submit_button("Visualize")
+
+    if submitted:
+        comment = "This is a comment"
+        incomes = {"salary": 1000, "dividends": 2000, "lottery": 3000}
+        expenses = {"rent": 1000, "food": 2000, "bills": 3000, "saving": 4000, "fun": 5000, "clothes": 6000}
+        
