@@ -9,3 +9,6 @@ currency = "USD"
 page_title = "Budget App"
 page_icon = "💰"
 layout = "centered"
+
+st.set_page_config(page_title=page_title, page_icon=page_icon, layout=layout)
+st.title(page_title + " " + page_icon)
