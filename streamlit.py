@@ -41,3 +41,12 @@ with st.form("entry_form", clear_on_submit=True):
 
     "---"
     submitted = st.form_submit_button("Save Entry")
+
+    if submitted: 
+        period = str(st.session_state.year) + "-" + str(st.session_state.month)
+        incomes = {income: st.session_state[income] for income in incomes}
+        expenses = {expense: st.session_state[expense] for expense in expenses}
+
+        st.write(f"Incomes: {incomes}")
+        st.write(f"Expenses: {expenses}")
+        st.success(f"Entry for {period} saved successfully!")
