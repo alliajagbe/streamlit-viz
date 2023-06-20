@@ -24,3 +24,7 @@ with st.form("entry_form", clear_on_submit=True):
     month_col, year_col = st.columns(2)
     month_col.selectbox("Select Month", months, key="month")
     year_col.selectbox("Select Year", years, key="year")
+
+    with st.expander("Incomes"):
+        for income in incomes: 
+            st.number_input(f"{income}:", min_value=0, format="%i", step=10, key=income)
