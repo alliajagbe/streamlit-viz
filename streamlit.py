@@ -87,9 +87,10 @@ if selected == "Visualizations":
         submitted = st.form_submit_button("Visualize")
 
         if submitted:
-            comment = "This is a comment"
-            incomes = {"salary": 1000, "dividends": 2000, "lottery": 30000}
-            expenses = {"rent": 1000, "food": 2000, "bills": 3000, "saving": 4000, "fun": 5000, "clothes": 6000}
+            period_data = db.get_period(period)
+            comment = period_data.get("comment")
+            incomes = period_data.get("incomes")
+            expenses = period_data.get("expenses")
 
             total_income = sum(incomes.values())
             total_expense = sum(expenses.values())
