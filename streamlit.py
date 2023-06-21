@@ -28,6 +28,8 @@ hide_streamlit_style = """
             </style>
             """
 
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 # navigation bar
 selected = option_menu(
     menu_title = None,
