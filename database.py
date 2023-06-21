@@ -10,7 +10,7 @@ deta = Deta(deta_key)
 
 # creating a new database
 
-db = deta.Base("monthly_reports")
+db = deta.Base("streamlit")
 
 # inserting data
 def insert_period(period, incomes, expenses, comment):
