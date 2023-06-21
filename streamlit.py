@@ -62,31 +62,32 @@ if selected == "Data Entry":
 
 
 # visualizations
-st.header(f"Visualizations")
-with st.form("saved_periods"):
-    period = st.selectbox("Select Period:", ["2023_January"])
-    submitted = st.form_submit_button("Visualize")
+if selected == "Visualizations":
+    st.header(f"Visualizations")
+    with st.form("saved_periods"):
+        period = st.selectbox("Select Period:", ["2023_January"])
+        submitted = st.form_submit_button("Visualize")
 
-    if submitted:
-        comment = "This is a comment"
-        incomes = {"salary": 1000, "dividends": 2000, "lottery": 30000}
-        expenses = {"rent": 1000, "food": 2000, "bills": 3000, "saving": 4000, "fun": 5000, "clothes": 6000}
+        if submitted:
+            comment = "This is a comment"
+            incomes = {"salary": 1000, "dividends": 2000, "lottery": 30000}
+            expenses = {"rent": 1000, "food": 2000, "bills": 3000, "saving": 4000, "fun": 5000, "clothes": 6000}
 
-        total_income = sum(incomes.values())
-        total_expense = sum(expenses.values())
-        remainder = total_income - total_expense
-        inc_column, exp_column, rem_column = st.columns(3)
-        inc_column.metric("Total Income", f"{total_income} {currency}")
-        exp_column.metric("Total Expense", f"{total_expense} {currency}")
-        rem_column.metric("Remainder", f"{remainder} {currency}")
+            total_income = sum(incomes.values())
+            total_expense = sum(expenses.values())
+            remainder = total_income - total_expense
+            inc_column, exp_column, rem_column = st.columns(3)
+            inc_column.metric("Total Income", f"{total_income} {currency}")
+            exp_column.metric("Total Expense", f"{total_expense} {currency}")
+            rem_column.metric("Remainder", f"{remainder} {currency}")
 
-        # income pie chart
-        income_fig = go.Figure(data=[go.Pie(labels=list(incomes.keys()), values=list(incomes.values()))])
-        income_fig.update_layout(title_text=f"Incomes for {period}")
-        st.plotly_chart(income_fig, use_container_width=True)
+            # income pie chart
+            income_fig = go.Figure(data=[go.Pie(labels=list(incomes.keys()), values=list(incomes.values()))])
+            income_fig.update_layout(title_text=f"Incomes for {period}")
+            st.plotly_chart(income_fig, use_container_width=True)
 
-        # expense pie chart
-        expense_fig = go.Figure(data=[go.Pie(labels=list(expenses.keys()), values=list(expenses.values()))])
-        expense_fig.update_layout(title_text=f"Expenses for {period}")
-        st.plotly_chart(expense_fig, use_container_width=True)
+            # expense pie chart
+            expense_fig = go.Figure(data=[go.Pie(labels=list(expenses.keys()), values=list(expenses.values()))])
+            expense_fig.update_layout(title_text=f"Expenses for {period}")
+            st.plotly_chart(expense_fig, use_container_width=True)
 
