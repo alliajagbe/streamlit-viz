@@ -16,3 +16,9 @@ def insert_period(period, incomes, expenses, comment):
         "expenses": expenses,
         "comment": comment
     })
+
+# fetching data
+def fetch_all_periods():
+    res = db.fetch()
+    return res.items
+
