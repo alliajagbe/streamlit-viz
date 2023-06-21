@@ -3,6 +3,7 @@ import plotly.graph_objects as go
 import calendar
 from datetime import datetime
 from streamlit_option_menu import option_menu
+import database as db
 
 
 # page configurations
