@@ -20,6 +20,11 @@ st.title(page_title + " " + page_icon)
 years = [datetime.today().year, datetime.today().year + 1]
 months = [calendar.month_name[i] for i in range(1, 13)]
 
+# database interface
+def get_all_periods():
+    periods = db.fetch_all_periods()
+    entry = [period["key"] for period in periods]
+    return entry
 # hiding streamlit style
 hide_streamlit_style = """
             <style>
@@ -69,8 +74,6 @@ if selected == "Data Entry":
             expenses = {expense: st.session_state[expense] for expense in expenses}
             db.insert_period(period, incomes, expenses, comment)
 
-            st.write(f"Incomes: {incomes}")
-            st.write(f"Expenses: {expenses}")
             st.success(f"Entry for {period} saved successfully!")
 
 
