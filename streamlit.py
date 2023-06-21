@@ -26,39 +26,39 @@ selected = option_menu(
     icons = ["pencil-fill", "bar-chart-fill"],
     orientation = "horizontal",
 )
+if selected == "Data Entry":
+    st.header(f"Data Entry in {currency}")
 
-st.header(f"Data Entry in {currency}")
+    with st.form("entry_form", clear_on_submit=True):
+        month_col, year_col = st.columns(2)
+        month_col.selectbox("Select Month", months, key="month")
+        year_col.selectbox("Select Year", years, key="year")
 
-with st.form("entry_form", clear_on_submit=True):
-    month_col, year_col = st.columns(2)
-    month_col.selectbox("Select Month", months, key="month")
-    year_col.selectbox("Select Year", years, key="year")
+        "---"
+        "Enter your incomes and expenses below:"
 
-    "---"
-    "Enter your incomes and expenses below:"
+        with st.expander("Incomes"):
+            for income in incomes: 
+                st.number_input(f"{income}:", min_value=0, format="%i", step=10, key=income)
 
-    with st.expander("Incomes"):
-        for income in incomes: 
-            st.number_input(f"{income}:", min_value=0, format="%i", step=10, key=income)
+        with st.expander("Expenses"):
+            for expense in expenses:
+                st.number_input(f"{expense}:", min_value=0, format="%i", step=10, key=expense)
 
-    with st.expander("Expenses"):
-        for expense in expenses:
-            st.number_input(f"{expense}:", min_value=0, format="%i", step=10, key=expense)
+        with st.expander("Comment"):
+            comment = st.text_area("", placeholder="Enter comment here...", max_chars=100)
 
-    with st.expander("Comment"):
-        comment = st.text_area("", placeholder="Enter comment here...", max_chars=100)
+        "---"
+        submitted = st.form_submit_button("Save Entry")
 
-    "---"
-    submitted = st.form_submit_button("Save Entry")
+        if submitted: 
+            period = str(st.session_state.year) + "-" + str(st.session_state.month)
+            incomes = {income: st.session_state[income] for income in incomes}
+            expenses = {expense: st.session_state[expense] for expense in expenses}
 
-    if submitted: 
-        period = str(st.session_state.year) + "-" + str(st.session_state.month)
-        incomes = {income: st.session_state[income] for income in incomes}
-        expenses = {expense: st.session_state[expense] for expense in expenses}
-
-        st.write(f"Incomes: {incomes}")
-        st.write(f"Expenses: {expenses}")
-        st.success(f"Entry for {period} saved successfully!")
+            st.write(f"Incomes: {incomes}")
+            st.write(f"Expenses: {expenses}")
+            st.success(f"Entry for {period} saved successfully!")
 
 
 # visualizations
