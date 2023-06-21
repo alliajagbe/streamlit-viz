@@ -19,6 +19,15 @@ st.title(page_title + " " + page_icon)
 years = [datetime.today().year, datetime.today().year + 1]
 months = [calendar.month_name[i] for i in range(1, 13)]
 
+# navigation bar
+selected = option_menu(
+    menu_title = None,
+    options = ["Data Entry", "Visualizations"],
+    icons = ["📝", "📊"],
+    orientation = "horizontal",
+    default_option = "Data Entry",
+)
+
 st.header(f"Data Entry in {currency}")
 
 with st.form("entry_form", clear_on_submit=True):
