@@ -25,6 +25,8 @@ def get_all_periods():
     periods = db.fetch_all_periods()
     entry = [period["key"] for period in periods]
     return entry
+
+
 # hiding streamlit style
 hide_streamlit_style = """
             <style>
@@ -81,7 +83,7 @@ if selected == "Data Entry":
 if selected == "Visualizations":
     st.header(f"Visualizations")
     with st.form("saved_periods"):
-        period = st.selectbox("Select Period:", ["2023_January"])
+        period = st.selectbox("Select Period:", get_all_periods())
         submitted = st.form_submit_button("Visualize")
 
         if submitted:
