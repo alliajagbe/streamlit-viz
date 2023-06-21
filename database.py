@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv(".env")
 
-deta_key = "a0qiawdh_mky8ZU9eRKDRcHYbrHZVeYZNSYVau4dD"
+deta_key = os.getenv("DETA_KEY")
 
 deta = Deta(deta_key)
 
