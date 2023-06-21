@@ -1,4 +1,8 @@
 from deta import Deta
+import os
+
+from dotenv import load_dotenv
+load_dotenv(".env")
 
 deta_key = "a0qiawdh_mky8ZU9eRKDRcHYbrHZVeYZNSYVau4dD"
 
