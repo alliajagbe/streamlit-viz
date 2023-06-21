@@ -23,7 +23,7 @@ months = [calendar.month_name[i] for i in range(1, 13)]
 selected = option_menu(
     menu_title = None,
     options = ["Data Entry", "Visualizations"],
-    icons = ["📝", "📊"],
+    icons = ["pencil-fill", "bar-chart-fill"],
     orientation = "horizontal",
 )
 
