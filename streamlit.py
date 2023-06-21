@@ -25,7 +25,6 @@ selected = option_menu(
     options = ["Data Entry", "Visualizations"],
     icons = ["📝", "📊"],
     orientation = "horizontal",
-    default_option = "Data Entry",
 )
 
 st.header(f"Data Entry in {currency}")
