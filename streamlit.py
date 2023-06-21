@@ -67,6 +67,7 @@ if selected == "Data Entry":
             period = str(st.session_state.year) + "-" + str(st.session_state.month)
             incomes = {income: st.session_state[income] for income in incomes}
             expenses = {expense: st.session_state[expense] for expense in expenses}
+            db.insert_period(period, incomes, expenses, comment)
 
             st.write(f"Incomes: {incomes}")
             st.write(f"Expenses: {expenses}")
