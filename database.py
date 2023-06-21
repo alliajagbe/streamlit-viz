@@ -22,3 +22,5 @@ def fetch_all_periods():
     res = db.fetch()
     return res.items
 
+def get_period(period):
+    return db.get(period)
