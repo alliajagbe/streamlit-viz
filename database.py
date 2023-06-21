@@ -4,9 +4,9 @@ import os
 from dotenv import load_dotenv
 load_dotenv(".env")
 
-deta_key = os.getenv("DETA_KEY")
+DETA_KEY = os.getenv("DETA_KEY")
 
-deta = Deta(deta_key)
+deta = Deta(DETA_KEY)
 
 # creating a new database
 
