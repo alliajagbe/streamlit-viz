@@ -7,3 +7,12 @@ deta = Deta(deta_key)
 # creating a new database
 
 db = deta.Base("monthly_reports")
+
+# inserting data
+def insert_period(period, incomes, expenses, comment):
+    return db.put({
+        "key": period, 
+        "incomes": incomes,
+        "expenses": expenses,
+        "comment": comment
+    })
