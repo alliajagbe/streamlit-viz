@@ -19,6 +19,15 @@ st.title(page_title + " " + page_icon)
 years = [datetime.today().year, datetime.today().year + 1]
 months = [calendar.month_name[i] for i in range(1, 13)]
 
+# hiding streamlit style
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+
 # navigation bar
 selected = option_menu(
     menu_title = None,
