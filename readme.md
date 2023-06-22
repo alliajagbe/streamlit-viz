@@ -12,3 +12,7 @@
 
 ## Sample Use Case (Without Database; see example.py file)
 ![alt text](https://github.com/alliajagbe/streamlit-viz/blob/master/initial_page.PNG?raw=true)
+
+### Entry-based Visualization
+![alt text](https://github.com/alliajagbe/streamlit-viz/blob/master/incomes.PNG?raw=true)
+![alt text](https://github.com/alliajagbe/streamlit-viz/blob/master/expenses.PNG?raw=true)
