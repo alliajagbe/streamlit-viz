@@ -39,6 +39,9 @@ selected = option_menu(
     orientation = "horizontal",
 )
 
+# storing the data in a dictionary
+mydict = {}
+
 if selected == "Data Entry":
     st.header(f"Data Entry in {currency}")
 
@@ -65,4 +68,8 @@ if selected == "Data Entry":
             period = str(st.session_state.year) + " " + str(st.session_state.month)
             incomes = {income: st.session_state[income] for income in incomes}
             expenses = {expense: st.session_state[expense] for expense in expenses}
+
+            mydict["period"] = period
+            mydict["incomes"] = incomes
+            mydict["expenses"] = expenses
             st.success("Data successfully submitted!")
