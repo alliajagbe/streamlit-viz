@@ -8,7 +8,7 @@ import database as db
 
 # page configurations
 incomes = ["salary", "dividends", "lottery"]
-expenses = ["rent", "food", "bills", "saving", "fun", "clothes"]
+expenses = ["rent", "food", "bills", "fun", "clothes"]
 currency = "Naira"
 page_title = "Budget App"
 page_icon = "💰"
