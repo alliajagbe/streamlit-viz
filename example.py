@@ -72,4 +72,4 @@ if selected == "Data Entry":
             mydict["period"] = period
             mydict["incomes"] = incomes
             mydict["expenses"] = expenses
-            st.success("Data successfully submitted!")
+            st.success("Data successfully submitted for {period}!")
