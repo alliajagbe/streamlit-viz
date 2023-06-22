@@ -7,4 +7,5 @@
 ## Softwares Used
 - Deta Collection - for data
 - Streamlit - for visualization
+- Dotenv - for the environment variable used in project
 - VSCode - for programming
