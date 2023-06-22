@@ -41,3 +41,22 @@ selected = option_menu(
 
 if selected == "Data Entry":
     st.header(f"Data Entry in {currency}")
+
+    with st.form("entry_form", clear_on_submit=True):
+        month_col, year_col = st.columns(2)
+        month_col.selectbox("Select Month", months, key="month")
+        year_col.selectbox("Select Year", years, key="year")
+
+        "---"
+        "Enter your incomes and expenses below:"
+
+        with st.expander("Incomes"):
+            for income in incomes: 
+                st.number_input(income, key=income, step=0.01, format="%f")
+
+        with st.expander("Expenses"):
+            for expense in expenses:
+                st.number_input(expense, key=expense, step=0.01, format="%f")
+
+        "---"
+        st.form_submit_button("Submit")
