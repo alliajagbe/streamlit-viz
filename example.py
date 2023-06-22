@@ -81,6 +81,11 @@ if selected == "Data Entry":
                 fig.update_layout(title="Incomes", xaxis_title="Income", yaxis_title="Amount")
                 st.plotly_chart(fig, use_container_width=True)
 
+                # pie chart
+                fig = go.Figure(data=[go.Pie(labels=list(mydict["incomes"].keys()), values=list(mydict["incomes"].values()))])
+                fig.update_layout(title="Incomes")
+                st.plotly_chart(fig, use_container_width=True)
+
             with st.expander("Expenses"):
                 fig = go.Figure()
                 fig.add_trace(go.Bar(x=list(mydict["expenses"].keys()), y=list(mydict["expenses"].values())))
