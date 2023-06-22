@@ -9,3 +9,6 @@
 - Streamlit - for visualization
 - Dotenv - for the environment variable used in project
 - VSCode - for programming
+
+## Sample Use Case (Without Database; see example.py file)
+![alt text](https://github.com/alliajagbe/streamlit-viz/blob/master/initial_page.PNG?raw=true)
