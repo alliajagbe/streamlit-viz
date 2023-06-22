@@ -38,3 +38,6 @@ selected = option_menu(
     icons = ["pencil-fill", "bar-chart-fill"],
     orientation = "horizontal",
 )
+
+if selected == "Data Entry":
+    st.header(f"Data Entry in {currency}")
