@@ -30,3 +30,11 @@ hide_streamlit_style = """
             """
 
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+# navigation bar
+selected = option_menu(
+    menu_title = None,
+    options = ["Data Entry", "Visualizations"],
+    icons = ["pencil-fill", "bar-chart-fill"],
+    orientation = "horizontal",
+)
