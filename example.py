@@ -83,7 +83,7 @@ with st.form("entry_form", clear_on_submit=True):
 
             # pie chart
             fig = go.Figure(data=[go.Pie(labels=list(mydict["incomes"].keys()), values=list(mydict["incomes"].values()))])
-            fig.update_layout(title="Incomes")
+            fig.update_layout(title="Incomes Pie Chart")
             st.plotly_chart(fig, use_container_width=True)
 
         with st.expander("Expenses"):
@@ -94,5 +94,5 @@ with st.form("entry_form", clear_on_submit=True):
 
             # pie chart
             fig = go.Figure(data=[go.Pie(labels=list(mydict["expenses"].keys()), values=list(mydict["expenses"].values()))])
-            fig.update_layout(title="Expenses")
+            fig.update_layout(title="Expenses Pie Chart")
             st.plotly_chart(fig, use_container_width=True)
