@@ -14,5 +14,8 @@
 ![alt text](https://github.com/alliajagbe/streamlit-viz/blob/master/initial_page.PNG?raw=true)
 
 ### Entry-based Visualization
+- Incomes
 ![alt text](https://github.com/alliajagbe/streamlit-viz/blob/master/incomes.PNG?raw=true)
+
+- Expenses
 ![alt text](https://github.com/alliajagbe/streamlit-viz/blob/master/expenses.PNG?raw=true)
