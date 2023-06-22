@@ -59,4 +59,10 @@ if selected == "Data Entry":
                 st.number_input(expense, key=expense, step=0.01, format="%f")
 
         "---"
-        st.form_submit_button("Submit")
+        submitted = st.form_submit_button("Submit")
+
+        if submitted:
+            period = st.session_state.year + " " + st.session_state.month
+            incomes = {income: st.session_state[income] for income in incomes}
+            expenses = {expense: st.session_state[expense] for expense in expenses}
+            st.success("Data successfully submitted!")
