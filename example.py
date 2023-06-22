@@ -10,7 +10,7 @@ import database as db
 incomes = ["salary", "dividends", "lottery"]
 expenses = ["rent", "food", "bills", "fun", "clothes"]
 currency = "Naira"
-page_title = "Budget App"
+page_title = "BudgViz App"
 page_icon = "💰"
 layout = "centered"
 
