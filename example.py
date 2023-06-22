@@ -80,3 +80,9 @@ if selected == "Data Entry":
                 fig.add_trace(go.Bar(x=list(mydict["incomes"].keys()), y=list(mydict["incomes"].values())))
                 fig.update_layout(title="Incomes", xaxis_title="Income", yaxis_title="Amount")
                 st.plotly_chart(fig, use_container_width=True)
+
+            with st.expander("Expenses"):
+                fig = go.Figure()
+                fig.add_trace(go.Bar(x=list(mydict["expenses"].keys()), y=list(mydict["expenses"].values())))
+                fig.update_layout(title="Expenses", xaxis_title="Expense", yaxis_title="Amount")
+                st.plotly_chart(fig, use_container_width=True)
